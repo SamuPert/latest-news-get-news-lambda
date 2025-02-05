@@ -32,9 +32,10 @@ jobs:
         env:
           NEWSDATA_API_BASE_URL: ${{ vars.NEWSDATA_API_BASE_URL }}
           NEWSDATA_API_KEY: ${{ secrets.NEWSDATA_API_KEY }}
+          QUARKUS_NATIVE_ENABLE_DASHBOARD_DUMP: true
 
       - name: Upload Native artifact to Github
         uses: actions/upload-artifact@v4
         with:
-          name: quarkus-native-executable
-          path: target/**/*-runner
+          name: quarkus-artifacts
+          path: target/get-latest-news-1.0.0-native-image-source-jar/*
