@@ -1,4 +1,4 @@
-name: GraalVM build
+name: Integration Testing
 on:
   push:
     branches:
