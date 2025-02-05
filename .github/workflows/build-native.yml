@@ -29,3 +29,8 @@ jobs:
 
       - name: Compile native package with Maven plugin  # https://graalvm.github.io/native-build-tools/latest/maven-plugin.html
         run: mvn -Pnative package
+        env:
+          NEWSDATA_API_BASE_URL: ${{ vars.NEWSDATA_API_BASE_URL }}
+          NEWSDATA_API_KEY: ${{ secrets.NEWSDATA_API_KEY }}
+
+

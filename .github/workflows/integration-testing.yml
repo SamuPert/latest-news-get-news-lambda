@@ -29,3 +29,6 @@ jobs:
 
       - name: Run Unit and Integration Tests
         run: mvn test
+        env:
+          NEWSDATA_API_BASE_URL: ${{ vars.NEWSDATA_API_BASE_URL }}
+          NEWSDATA_API_KEY: ${{ secrets.NEWSDATA_API_KEY }}
