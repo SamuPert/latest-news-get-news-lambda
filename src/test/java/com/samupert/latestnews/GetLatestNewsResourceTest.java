@@ -29,7 +29,7 @@ class GetLatestNewsResourceTest {
     NewsdataService newsService;
 
     @Test
-    void testDefaultResponseWhenNoParametersProvided() throws IOException {
+    void testDefaultResponseWhenNoParametersProvided() {
 
         Log.debug("Fetching json api mock: \"src/test/resources/mock_news_generic_response.json\"");
 
@@ -39,7 +39,7 @@ class GetLatestNewsResourceTest {
                 .thenReturn(newsApiResponse);
 
 
-        ValidatableResponse validatableResponse = given()
+        given()
                 .when().get("/")
                 .then()
                 .statusCode(200)
